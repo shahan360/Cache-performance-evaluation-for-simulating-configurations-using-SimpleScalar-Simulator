@@ -1,0 +1,45 @@
+cp default.cfg ../../SPEC2000/gcc
+
+cp sim-outorder ../SPEC2000/gcc
+
+Run command for bzip
+./sim-outorder -config default.cfg -fastfwd 100000000 -max:inst 100000000 bzip200.peak.ev6 input.source 58 
+
+Run command for crafty 
+./sim-outorder -config default.cfg -fastfwd 100000000 -max:inst 100000000 crafty00.peak.ev6 < crafty.in  
+
+Run command for eon 
+./sim-outorder -config default.cfg -fastfwd 100000000 -max:inst 100000000 eon00.peak.ev6 chair.control.cook chair.camera chair.surfaces chair.cook.ppm ppm pixels_out.cook 
+
+Run command for equake
+./sim-outorder -config default.cfg -fastfwd 100000000 -max:inst 100000000 equake00.peak.ev6 < inp.in > inp.out 2> inp.err
+
+Run command for galgel
+./sim-outorder -config default.cfg -fastfwd 100000000 -max:inst 100000000 galgel00.peak.ev6 < galgel.in 
+
+Run command for gcc
+./sim-outorder -config default.cfg -fastfwd 100000000 -max:inst 100000000 gcc00.peak.ev6 166.i -o 166.s
+
+Run command for mcf
+./sim-outorder -config default.cfg -fastfwd 100000000 -max:inst 100000000 mcf00.peak.ev6 inp.in.mcf  
+
+Run command for mesa
+./sim-outorder -config default.cfg -fastfwd 100000000 -max:inst 100000000 mesa00.peak.ev6 -frames 1000 -meshfile mesa.in -ppmfile mesa.ppm 
+
+Run command for swim
+./sim-outorder -config default.cfg -fastfwd 100000000 -max:inst 100000000 swim00.peak.ev6  < swim.in 
+
+Run command for wupwise
+./sim-outorder -config default.cfg -fastfwd 100000000 -max:inst 100000000 wupwise00.peak.ev6 < wupwise.in  
+
+
+
+For accessing and changing values in default.cfg file
+1. type: vi default.cfg
+2. type: E for getting into "edit file" mode
+3. once inside the file, press "Shift+:" keys and then type "set number" on side of it.
+4. For getting into insert mode type "i".
+5. Change the configuration.(main step)
+6. For getting back into command mode press "Esc" key.
+7. For saving the file, press "Shift+:" keys and then type "wq" on side of it.
+8. come to the benchmark folder level and type above run command to check configuration setting against benchmark.
